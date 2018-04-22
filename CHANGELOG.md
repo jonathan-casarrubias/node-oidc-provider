@@ -68,6 +68,7 @@ Yay for [SemVer](http://semver.org/).
   - fetched `request_uri` contents are no longer cached for 15 minutes default, cache headers are
     honoured and responses without one will fall off the LRU-Cache when this one is full
   - fixed failed client `jwks_uri` fetch requests to throw `invalid_client_metadata` rather then `server_error`
+  - `audiences` helper gets called with additional parameters `use` and `scope`
 
 ## 2.18.0
 - [DIFF](https://github.com/panva/node-oidc-provider/compare/v2.17.0...v2.18.0)
