@@ -30,7 +30,7 @@ Yay for [SemVer](http://semver.org/).
 <!-- TOC END -->
 
 ## 3.0.0
-- [DIFF]
+- [DIFF](https://github.com/panva/node-oidc-provider/compare/master...v3.x-wip)
 - **New configurations**
   - LRU-cache sizes
 - **Session Changes**
@@ -68,7 +68,12 @@ Yay for [SemVer](http://semver.org/).
   - fetched `request_uri` contents are no longer cached for 15 minutes default, cache headers are
     honoured and responses without one will fall off the LRU-Cache when this one is full
   - fixed failed client `jwks_uri` fetch requests to throw `invalid_client_metadata` rather then `server_error`
+  - added `aud` to the introspection response if a token has one
   - `audiences` helper gets called with additional parameters `use` and `scope`
+  - `audiences` helper `use` parameter is now in addition to existing id_token and signed userinfo
+    cases an `access_token`, this is useful for pushing additional audiences to an Access Token,
+    these are now returned by token introspection and can be used when serializing an Access Token
+    as a JWT
 
 ## 2.18.0
 - [DIFF](https://github.com/panva/node-oidc-provider/compare/v2.17.0...v2.18.0)
